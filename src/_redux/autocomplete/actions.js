@@ -1,0 +1,8 @@
+const actions = {
+  AUTOCOMPLETE__LOAD: "AUTOCOMPLETE__LOAD",
+  AUTOCOMPLETE__LOAD_SUCCESS: "AUTOCOMPLETE__LOAD_SUCCESS",
+  AUTOCOMPLETE__LOAD_FAILURE: "AUTOCOMPLETE__LOAD_FAILURE",
+  load: params => ({ type: actions.AUTOCOMPLETE__LOAD, params })
+};
+
+export default actions;
