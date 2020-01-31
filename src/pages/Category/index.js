@@ -1,62 +1,33 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { connect } from "react-redux";
 
-const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: inherit;
-  &.selected {
-    color: cornflowerblue;
-  }
-`;
+import { CatergoryPageContainer } from "./styles";
 
-const CATEGORIES = [
-  {
-    id: 1,
-    category: "general"
-  },
-  {
-    id: 2,
-    category: "entertainment"
-  },
-  {
-    id: 3,
-    category: "business"
-  },
-  {
-    id: 4,
-    category: "health"
-  },
-  {
-    id: 5,
-    category: "science"
-  },
-  {
-    id: 6,
-    category: "sports"
-  },
-  {
-    id: 7,
-    category: "technology"
-  }
-];
+import CategoriesHeader from "components/Category/CateroriesHeader";
+import CategoryResults from "components/CategoryResults";
 
-const Category = ({ match }) => {
+import categoryActions from "_redux/category/actions";
+
+const { loadCategoryResults } = categoryActions;
+
+const Category = ({ match, loadCategoryResults }) => {
+  React.useEffect(() => {
+    loadCategoryResults(match.params.category);
+  }, [loadCategoryResults, match.params.category]);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [match.params.category]);
+
   return (
     <>
-      <header style={{ display: "flex", flexDirection: "column" }}>
-        {CATEGORIES.map(({ category, id }) => (
-          <StyledNavLink
-            to={`/categories/${category}`}
-            key={id}
-            activeClassName="selected"
-          >
-            {category}
-          </StyledNavLink>
-        ))}
-      </header>
-      {match.params.category}
+      <CatergoryPageContainer>
+        <CategoriesHeader />
+        <CategoryResults title={match.params.category} />
+      </CatergoryPageContainer>
     </>
   );
 };
-export default Category;
+export default connect(null, {
+  loadCategoryResults
+})(Category);

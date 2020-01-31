@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   body {
 		font-family: Ubuntu, sans-serif;
     box-sizing: border-box;
+    background-color: ${props => props.theme.background};
   }
 
   *,

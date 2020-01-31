@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   max-width: 1480px;
   background-color: ${props => props.theme.white};
-  height: 55px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
