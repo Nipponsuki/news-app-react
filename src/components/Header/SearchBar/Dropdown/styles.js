@@ -10,6 +10,8 @@ const DropdownContainer = styled.div`
   background-color: ${props => props.theme.background};
   overflow-y: scroll;
   overflow-x: hidden;
+  border: 1.5px solid #000;
+  z-index: 999;
 
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
