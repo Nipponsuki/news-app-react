@@ -1,11 +1,33 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const Home = () => {
+import { CatergoryPageContainer } from "./styles";
+
+import CategoriesHeader from "components/Category/CateroriesHeader";
+import CategoryResults from "components/Category/CategoryResults";
+
+import categoryActions from "_redux/category/actions";
+
+const { loadCategoryResults } = categoryActions;
+
+const Home = ({ match, loadCategoryResults }) => {
+  React.useEffect(() => {
+    loadCategoryResults(match.params.category);
+  }, [loadCategoryResults, match.params.category]);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [match.params.category]);
+
   return (
     <>
-      <h1>home</h1>
+      <CatergoryPageContainer>
+        <CategoriesHeader />
+        <CategoryResults title={match.params.category} />
+      </CatergoryPageContainer>
     </>
   );
 };
-
-export default Home;
+export default connect(null, {
+  loadCategoryResults
+})(Home);

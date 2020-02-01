@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import About from "pages/About";
-import Category from "pages/Category";
+import Home from "pages/Home";
 import Search from "pages/Search";
 import Resources from "pages/Resources";
 import { PageWrapper } from "components/Common/PageWrapper";
@@ -22,7 +22,7 @@ const App = () => {
           />
           <Route path="/about" component={About} />
           <Route path="/sources" component={Resources} />
-          <Route path="/categories/:category" component={Category} />
+          <Route path="/categories/:category" component={Home} />
           <Route path="/search/:term" component={Search} />
         </PageWrapper>
       </Switch>

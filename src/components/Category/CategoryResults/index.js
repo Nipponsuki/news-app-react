@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { CategoryResultsContainer } from "./styles";
-import { CategoryTitle } from "pages/Category/styles";
+import { CategoryTitle } from "pages/Home/styles";
 
 import NewsCard from "components/NewsCard";
 import LoadingScreen from "components/LoadingScreen";
