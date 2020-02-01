@@ -16,9 +16,10 @@ const LoadingScreenContainer = styled.div`
   left: 0;
   height: 80vh;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   align-items: center;
   justify-content: center;
+  z-index: 999;
 `;
 
 const StyledLoader = styled.div`
