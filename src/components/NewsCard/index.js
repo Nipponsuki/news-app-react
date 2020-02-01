@@ -20,15 +20,7 @@ import placeholder from "assets/images/placeholder.jpg";
 dayjs.extend(LocalizedFormat);
 
 const NewsCard = ({
-  article: {
-    description,
-    publishedAt,
-    source: { name },
-    title,
-    url,
-    urlToImage,
-    author
-  },
+  article: { description, publishedAt, title, url, urlToImage, author },
   delay
 }) => {
   return (
