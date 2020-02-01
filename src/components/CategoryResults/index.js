@@ -12,9 +12,10 @@ const CategoryResults = ({ title, articles, isLoading, error }) => {
     <CategoryResultsContainer>
       <CategoryTitle>{title}</CategoryTitle>
       {isLoading && <LoadingScreen />}
+      {error && <h2>{error}</h2>}
       {articles.length > 0 &&
-        articles.map(article => (
-          <NewsCard key={article.url} article={article} />
+        articles.map((article, index) => (
+          <NewsCard key={article.url} article={article} delay={index} />
         ))}
     </CategoryResultsContainer>
   );

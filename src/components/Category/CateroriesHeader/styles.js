@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import { NavLink } from "react-router-dom";
 
-const CategoriesHeaderContainer = styled.div`
+const CategoriesHeaderContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -32,5 +34,16 @@ const CategoryHeaderTitle = styled.h2`
   color: #000;
   margin-bottom: 25px;
 `;
+
+export const categoriesHeaderVariants = {
+  exit: {
+    opacity: 0,
+    x: "-50%"
+  },
+  enter: {
+    opacity: 1,
+    x: 0
+  }
+};
 
 export { CategoriesHeaderContainer, CategoryLink, CategoryHeaderTitle };
