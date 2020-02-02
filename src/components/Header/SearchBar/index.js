@@ -19,6 +19,7 @@ const SearchBar = ({ load, words, history }) => {
   const [term, setTerm] = React.useState("");
   const [isDropdownShown, setIsDropdownShown] = React.useState(false);
   const [activeOption, setActiveOption] = React.useState(-1);
+  console.log(term);
 
   const searchbarRef = React.useRef();
 

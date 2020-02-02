@@ -12,6 +12,9 @@ const CategoryTitle = styled.h1`
   position: absolute;
   left: 0;
   top: -45px;
+  span {
+    text-transform: lowercase;
+  }
 `;
 
 export { CatergoryPageContainer, CategoryTitle };
