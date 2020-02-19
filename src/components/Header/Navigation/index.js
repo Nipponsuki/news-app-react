@@ -11,7 +11,7 @@ const NAV_LINKS = [
 
 const Navigation = () => {
   return (
-    <Navbar>
+    <Navbar data-testid="navbar">
       {NAV_LINKS.map(link => (
         <StyledNavLink key={link.id} to={link.to} activeClassName="selected">
           <IconContainer>{link.icon}</IconContainer>

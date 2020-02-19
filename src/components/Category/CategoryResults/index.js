@@ -9,9 +9,9 @@ import LoadingScreen from "components/LoadingScreen";
 
 const CategoryResults = ({ title, articles, isLoading, error }) => {
   return (
-    <CategoryResultsContainer>
+    <CategoryResultsContainer data-test-id="categories">
       <CategoryTitle>{title}</CategoryTitle>
-      {isLoading && <LoadingScreen />}
+      {isLoading && !error && <LoadingScreen />}
       {error && <h2>{error}</h2>}
       {articles.length > 0 &&
         articles.map((article, index) => (

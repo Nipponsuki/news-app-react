@@ -28,3 +28,5 @@ export const CATEGORIES = [
     category: "technology"
   }
 ];
+
+export const API_KEY = process.env.REACT_APP_API_KEY;

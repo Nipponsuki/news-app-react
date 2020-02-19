@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_API_KEY;
+import { API_KEY } from "utils/constants";
 
 const load = async category => {
   const query = {
